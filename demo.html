@@ -3,10 +3,46 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>demo</title>
-	<link rel="stylesheet" href="">
+	<title>test</title>
+	<link rel="stylesheet" href="test.css">
+	<script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
 </head>
 <body>
-	
+	<div id="app">
+		{{ message}}
+	</div>
+	<div id="app-2">
+		<span v-bind:title="message">
+			Hover your mouse over me for a few seconds to see my dynamically bound title!
+		</span>
+	</div>
+	<!-- 我们不仅可以绑定 DOM 文本到数据，也可以绑定 DOM 结构到数据。 -->
+	<div id="app-3">
+		<p v-if="seen">Now you see me</p>
+	</div>
+	<!-- 条件与循环 -->
+	<div id="app-4">
+		<ol>
+			<li v-for="todo in todos">
+				{{ todo.text }}
+			</li>
+		</ol>
+	</div>
+	<!-- 处理用户输入 -->
+	<div id="app-5">
+		<p>{{ message }}</p>
+		<button v-on:click="reverseMessage">Reverse Message</button>
+	</div>
+	<!-- v-modal使得在表单输入和应用状态中做双向数据绑定变得非常轻巧。 -->
+	<div id="app-6">
+		<p>{{ message }}</p>
+		<input v-model="message">
+	</div>
+	<div id="app-7">
+		<ol>
+			<todo-item v-for="todo in todos" v-bind:todo="todo"></todo-item>
+		</ol>
+	</div>
+	<script src="test.js"></script>
 </body>
 </html>
