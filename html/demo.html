@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>test</title>
-	<link rel="stylesheet" href="test.css">
+	<link rel="stylesheet" href="../css/demo.css">
 	<script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
 </head>
 <body>
@@ -40,9 +40,10 @@
 	</div>
 	<div id="app-7">
 		<ol>
-			<todo-item v-for="todo in todos" v-bind:todo="todo"></todo-item>
+			<todo v-for="todo in todos" v-bind:todo="todo"></todo>
 		</ol>
 	</div>
-	<script src="test.js"></script>
+	<div id="example"></div>
+	<script src="../js/demo.js"></script>
 </body>
 </html>
