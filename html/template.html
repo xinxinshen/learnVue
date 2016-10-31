@@ -5,8 +5,19 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Template Syntax</title>
 	<link rel="stylesheet" href="../css/template.css">
+	<script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
 </head>
 <body>
-	
+	<span>Message: {{ msg }}</span>
+	<span v-once>This will never change:{{ msg }}</span>
+	<div v-html="rowHtml"></div>
+	<div v-bind:id="dynamicId"></div>
+	<button v-bind:disabled="someDynamicCondition">Button</button>
+	<span>{{ number + 1 }}</span>
+	<span>{{ ok ? 'Yes' : 'No' }}</span>
+	<span>{{ message.split('').reverse().join('') }}</span>
+	<div v-bind:id="'list-' + id"></div>
+	<form v-on:submit.prevent="onSubmit"></form>
+	<script src="../js/template.js"></script>
 </body>
 </html>
