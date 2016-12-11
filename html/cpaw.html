@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Computed Proerties and Watchers</title>
+    <script src="../lib/vue.js"></script>
+    <script src="../lib/axios.js"></script>
+    <script src="../lib/lodash.js"></script>
+</head>
+
+<body>
+    <div id="example">
+        <p>Original message: "{{ message }}"</p>
+        <p>Computed reversed message:"{{ reverseMessage }}"</p>
+    </div>
+    <div id="div1">我是一个div</div>
+    <div id="example1">{{ date }}{{ now }}</div>
+    <div id="demo">{{ fullName }}</div>
+    <div id="watch-example">
+        <p>
+            Ask a yes/no question:
+            <input v-model="question">
+        </p>
+        <p>{{ answer }}</p>
+    </div>
+    <div v-bind:class=" active: isActive"></div>
+    <div id="demo2" class="static" v-bind:class="{ active: isActive, 'text-danger':hasError }">demo2</div>
+    <div id="demo3" v-bind:class="classObject">demo3</div>
+    <div id="demo4" v-bind:class="classObject">demo4</div>
+    <div id="demo5" v-bind:class="[activeClass, errorClass]">demo5</div>
+    <div id="demo6" v-bind:class="[isActive ? activeClass : '', errorClass]">demo6</div>
+    <my-component class="baz boo" v-bind:class="{ active: isActive }"></my-component>
+    <script src="../js/cpaw.js"></script>
+</body>
+
+</html>
